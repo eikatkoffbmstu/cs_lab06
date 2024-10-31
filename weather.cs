@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -37,7 +36,7 @@ class Program
                 && !string.IsNullOrEmpty(weather.Value.Name))
             {
                 weatherData.Add(weather.Value);
-                Console.WriteLine($"Добавлен элемент {weatherData.Count}");
+                Console.WriteLine($"!!!!!!!!!!!!!! {weatherData.Count} !!!!!!!!!");
             }
         }
 
@@ -70,7 +69,7 @@ class Program
     {
         try
         {
-            Console.WriteLine($"Запрос к URL: {url}");
+            Console.WriteLine($"Запрос {url}");
             var response = await httpClient.GetFromJsonAsync<WeatherResponse>(url);
 
             if (response != null 
@@ -90,7 +89,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Ответ API не содержит необходимых данных.");
+                Console.WriteLine("Нет даты");
             }
         }
         catch (HttpRequestException ex)
